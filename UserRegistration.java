@@ -55,12 +55,12 @@ public class UserRegistration{
 			System.out.println("Please Enter Valid Phone Number");
 		}
 	}
-//Check Password(minnimum 8 cahracters)
+//Check Password(At least 1 Upper Case)
 	public static void checkPassword(){
 		System.out.println("Enter password");
 		Scanner sc = new Scanner(System.in);
 		String input = sc.nextLine();
-		String p = "[A-Z a-z]{8}";
+		String p = "(?=.*?[A-Z]).{8,}$";
 		if(Pattern.matches(p,input)) {
 			System.out.println("Valid Password"+input);
 		}
