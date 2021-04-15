@@ -42,10 +42,24 @@ public class UserRegistration{
 
 		}
 	}
+//Check Phone Number
+	public static void checkPhoneNumber(){
+		System.out.println("Enter Phone Number");
+		Scanner sc = new Scanner(System.in);
+		String input = sc.nextLine();
+		String p = "^[0-9]{2}\\s[0-9]{10}";
+		if(Pattern.matches(p,input)) {
+			System.out.println("Valid Phone Number"+input);
+		}
+		else {
+			System.out.println("Please Enter Valid Phone Number");
+		}
+	}
 //Calling Method
 	public static void main(String[] args){
 		checkFirstName();
 		checkLastName();
 		checkEmail();
+		checkPhoneNumber();
 	}
 }
