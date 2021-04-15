@@ -55,11 +55,26 @@ public class UserRegistration{
 			System.out.println("Please Enter Valid Phone Number");
 		}
 	}
+//Check Password(minnimum 8 cahracters)
+	public static void checkPassword(){
+		System.out.println("Enter password");
+		Scanner sc = new Scanner(System.in);
+		String input = sc.nextLine();
+		String p = "[A-Z a-z]{8}";
+		if(Pattern.matches(p,input)) {
+			System.out.println("Valid Password"+input);
+		}
+		else {
+			System.out.println("Please Enter Valid Password");
+		}
+	}
+
 //Calling Method
 	public static void main(String[] args){
 		checkFirstName();
 		checkLastName();
 		checkEmail();
 		checkPhoneNumber();
+		checkPassword();
 	}
 }
