@@ -68,7 +68,30 @@ public class UserRegistration{
 			System.out.println("Please Enter Valid Password");
 		}
 	}
-
+//Check Email Samples
+	public static void checkEmailSamples(){
+		String p = "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$";
+		ArrayList<String> email = new ArrayList<String>();
+		email.add("abc@yahoo.com");
+		email.add("abc-100@yahoo.com");
+		email.add("abc.100@yahoo.com");
+		email.add("abc111@yahoo.com");
+		email.add("abc-100@abc.net");
+		email.add("abc.@gmail.com");
+		email.add("abc@%*.com");
+		email.add("abc@abc@gmail.com");
+		email.add("abc()*@gmail.com");
+		email.add("abc@.com.my");
+		for(int i=0; i < email.size(); i++)
+		{
+			if(Pattern.matches(p,email.get(i))) {
+				System.out.println("Valid Email Sample");
+			}
+			else{
+				System.out.println("Invalid Email Sample");
+			}
+		}
+	}
 //Calling Method
 	public static void main(String[] args){
 		checkFirstName();
@@ -76,5 +99,6 @@ public class UserRegistration{
 		checkEmail();
 		checkPhoneNumber();
 		checkPassword();
+		checkEmailSamples();
 	}
 }
